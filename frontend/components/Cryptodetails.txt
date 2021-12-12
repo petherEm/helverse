@@ -1,0 +1,28 @@
+import React, { useState } from 'react'
+import { useRouter } from 'next/router'
+import HTMLReactParser from 'html-react-parser'
+import { useParams } from 'react-router-dom'
+import millify from 'millify'
+import styled from 'styled-components'
+import { useGetCryptoDetailsQuery } from '../services/cryptoApi'
+import { useGetCryptoNewsQuery } from '../services/cryptoNewsApi'
+
+
+
+const Cryptodetails = () => {
+    // const { coinId } = useParams();
+    const router = useRouter()
+    const { coinId } = router.query
+    const [timePeriod, setTimePeriod] = useState('7d')
+    const { data, isFetching } = useGetCryptoNewsQuery(coinId)
+
+    console.log(data)
+
+    return (
+        <div>
+           {coinId}
+        </div>
+    )
+}
+
+export default Cryptodetails
