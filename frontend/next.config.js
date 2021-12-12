@@ -7,11 +7,14 @@ module.exports = {
     return [
       {
       source: '/api/:path*',
-      destination: `http://localhost:8800/api/:path*`
+      destination: `/api/:path*`
       },
     ]
   }
 
 }
+
+
+// http://localhost:8800/api/:path*
 
 

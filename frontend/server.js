@@ -3,6 +3,8 @@ const express = require('express')
 const next = require('next')
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
+
+
 const devProxy = {
     '/api': {
         target: 'http://localhost:8800', 
